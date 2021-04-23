@@ -1,0 +1,12 @@
+name: FindTheAssassin
+version: ${project.version}
+main: com.github.eighty88.findassassin.FindAssassin
+api-version: 1.14
+authors: [ eight_y_88 ]
+website: https://github.com/eighty88
+
+commands:
+  findtheassassin:
+    aliases: ["fta"]
+    usage: /<command>
+    permission: op
