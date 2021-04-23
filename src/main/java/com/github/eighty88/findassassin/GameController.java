@@ -33,85 +33,55 @@ public class GameController {
     }
 
     public void end(RoleType winner) {
-        if(winner != RoleType.None) {
+        if(winner != RoleType.None)
             for(Player player: Bukkit.getOnlinePlayers()) {
                 player.sendTitle(winner.toString() + ChatColor.WHITE + "の勝利", "", 0, 50, 50);
             }
-        }
 
-        List<FTAPlayer> Assassin = new ArrayList<>();
-        List<FTAPlayer> Maid = new ArrayList<>();
-        List<FTAPlayer> Butler = new ArrayList<>();
-        List<FTAPlayer> Millionaire = new ArrayList<>();
-        List<FTAPlayer> Servant = new ArrayList<>();
-        List<FTAPlayer> FakeMaid = new ArrayList<>();
+        StringBuilder Assassins = new StringBuilder(),
+                Maids = new StringBuilder(),
+                Butlers = new StringBuilder(),
+                FakeMaids = new StringBuilder(),
+                Millionaire = new StringBuilder(),
+                ServantName = new StringBuilder();
 
         for(FTAPlayer ftaPlayer:FTAPlayer.getFTAPlayers()) {
             switch (ftaPlayer.getRole()) {
                 case Maid:
-                    Maid.add(ftaPlayer);
+                    Maids.append(ftaPlayer.getPlayer().getName()).append(" ");
                     break;
                 case Butler:
-                    Butler.add(ftaPlayer);
+                    Butlers.append(ftaPlayer.getPlayer().getName()).append(" ");
                     break;
                 case Servant:
-                    Servant.add(ftaPlayer);
+                    ServantName.append(ftaPlayer.getPlayer().getName()).append(" ");
                     break;
                 case Assassin:
-                    Assassin.add(ftaPlayer);
+                    Assassins.append(ftaPlayer.getPlayer().getName()).append(" ");
                     break;
                 case FakeMaid:
-                    FakeMaid.add(ftaPlayer);
+                    FakeMaids.append(ftaPlayer.getPlayer().getName()).append(" ");
                     break;
                 case Millionaire:
-                    Millionaire.add(ftaPlayer);
+                    Millionaire.append(ftaPlayer.getPlayer().getName()).append(" ");
                     break;
             }
         }
-        StringBuilder AssassinName = new StringBuilder();
-        for(FTAPlayer p:Assassin) {
-            AssassinName.append(p.getPlayer().getName()).append(" ");
-        }
-        String Assassins = AssassinName.toString();
-        StringBuilder MaidName = new StringBuilder();
-        for(FTAPlayer p:Maid) {
-            MaidName.append(p.getPlayer().getName()).append(" ");
-        }
-        String Maids = MaidName.toString();
-        StringBuilder ButlerName = new StringBuilder();
-        for(FTAPlayer p:Butler) {
-            ButlerName.append(p.getPlayer().getName()).append(" ");
-        }
-        String Butlers = ButlerName.toString();
-        StringBuilder FakeMaidName = new StringBuilder();
-        for(FTAPlayer p:FakeMaid) {
-            FakeMaidName.append(p.getPlayer().getName()).append(" ");
-        }
-        String FakeMaids = FakeMaidName.toString();
-        StringBuilder MillionaireName = new StringBuilder();
-        for(FTAPlayer p:Millionaire) {
-            MillionaireName.append(p.getPlayer().getName()).append(" ");
-        }
-        String Millionaires = MillionaireName.toString();
-        StringBuilder ServantName = new StringBuilder();
-        for(FTAPlayer p:Servant) {
-            ServantName.append(p.getPlayer().getName()).append(" ");
-        }
+
         Bukkit.broadcastMessage(ChatColor.GREEN + "-----=====" + ChatColor.UNDERLINE + "今回の役職" + ChatColor.RESET + ChatColor.GREEN + "=====-----");
         Bukkit.broadcastMessage(ChatColor.DARK_RED.toString() + ChatColor.BOLD + "暗殺者");
-        Bukkit.broadcastMessage(ChatColor.DARK_RED + Assassins);
+        Bukkit.broadcastMessage(ChatColor.DARK_RED + Assassins.toString());
         Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE.toString() + ChatColor.BOLD + "偽メイド");
-        Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + FakeMaids);
+        Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + FakeMaids.toString());
         Bukkit.broadcastMessage(ChatColor.AQUA.toString() + ChatColor.BOLD + "執事");
-        Bukkit.broadcastMessage(ChatColor.AQUA + Butlers);
+        Bukkit.broadcastMessage(ChatColor.AQUA + Butlers.toString());
         Bukkit.broadcastMessage(ChatColor.YELLOW.toString() + ChatColor.BOLD + "メイド");
-        Bukkit.broadcastMessage(ChatColor.YELLOW + Maids);
+        Bukkit.broadcastMessage(ChatColor.YELLOW + Maids.toString());
         Bukkit.broadcastMessage(ChatColor.GREEN.toString() + ChatColor.BOLD + "富豪");
-        Bukkit.broadcastMessage(ChatColor.GREEN + Millionaires);
+        Bukkit.broadcastMessage(ChatColor.GREEN + Millionaire.toString());
         Bukkit.broadcastMessage(ChatColor.DARK_GREEN.toString() + ChatColor.BOLD + "使用人");
         Bukkit.broadcastMessage(ChatColor.DARK_GREEN.toString() + ServantName);
         Bukkit.broadcastMessage(ChatColor.GREEN.toString() + ChatColor.STRIKETHROUGH + "==============================");
-
 
         FTAPlayer.RefreshPlayers();
     }
@@ -121,9 +91,8 @@ public class GameController {
         int assassin = 0;
         for(FTAPlayer player: FTAPlayer.getFTAPlayers()) {
             if(!player.isDead()) {
-                if(player.getRole() == RoleType.Assassin) {
+                if(player.getRole() == RoleType.Assassin)
                     assassin++;
-                }
             } else {
                 if(player.getRole() == RoleType.Millionaire) {
                     end(RoleType.Assassin);
@@ -131,18 +100,16 @@ public class GameController {
                 }
             }
         }
-        if(assassin == 0) {
+        if(assassin == 0)
             end(RoleType.Millionaire);
-        }
     }
 
     private void LotteryRole() {
         FTAPlayer millionaire = null;
         List<FTAPlayer> TempList = new ArrayList<>();
         for(FTAPlayer ftaPlayer: FTAPlayer.getFTAPlayers()) {
-            if(ftaPlayer.getPlayer().getGameMode() != GameMode.SPECTATOR) {
+            if(ftaPlayer.getPlayer().getGameMode() != GameMode.SPECTATOR)
                 TempList.add(ftaPlayer);
-            }
         }
         StringBuilder TempAssassin = new StringBuilder();
         Collections.shuffle(TempList);

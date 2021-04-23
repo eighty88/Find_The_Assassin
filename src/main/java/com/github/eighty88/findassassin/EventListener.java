@@ -73,9 +73,8 @@ public class EventListener implements Listener {
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e) {
-        if(e.getView().getTitle().equals(ChatColor.GOLD + "設定")) {
+        if(e.getView().getTitle().equals(ChatColor.GOLD + "設定"))
             settings.onCloseGUI();
-        }
     }
 
     @EventHandler
@@ -105,7 +104,7 @@ public class EventListener implements Listener {
 
     @EventHandler
     public void onPlayerDropItem(PlayerDropItemEvent e) {
-        if(FTAPlayer.getFTAPlayer(e.getPlayer()).getRole() == RoleType.Millionaire) {
+        if(FTAPlayer.getFTAPlayer(e.getPlayer()).getRole() == RoleType.Millionaire)
             if(e.getItemDrop().getItemStack().getType() == Material.REDSTONE_TORCH) {
                 e.getItemDrop().remove();
                 for(FTAPlayer ftaPlayer:FTAPlayer.getFTAPlayers()) {
@@ -114,7 +113,6 @@ public class EventListener implements Listener {
                     }
                 }
             }
-        }
     }
 
     @EventHandler

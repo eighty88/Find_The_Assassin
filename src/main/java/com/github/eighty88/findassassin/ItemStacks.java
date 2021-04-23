@@ -17,7 +17,7 @@ public class ItemStacks {
         ItemStack result = new ItemStack(Material.IRON_SWORD, 1);
         ItemMeta meta = result.getItemMeta();
         assert meta != null;
-        ((Damageable) meta).setDamage(130);
+        ((Damageable) meta).setDamage(251);
         meta.addEnchant(Enchantment.DAMAGE_ALL, 10000,true);
         meta.setDisplayName(ChatColor.RESET + "一撃剣");
         meta.setLore(Collections.singletonList(ChatColor.AQUA + "プレイヤーを一撃で倒せる。"));
