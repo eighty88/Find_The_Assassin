@@ -9,6 +9,9 @@ import java.util.*;
 
 public class ItemStacks {
     public ItemStack Assassin(int amount) {
+        if(amount == 0) {
+            amount = 1;
+        }
         ItemStack Stack = new ItemStack(Material.RED_STAINED_GLASS_PANE, amount);
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.RED + "暗殺者");

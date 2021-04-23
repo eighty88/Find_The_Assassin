@@ -25,6 +25,15 @@ public class ItemStacks {
         return result;
     }
 
+    public static ItemStack getDummySword() {
+        ItemStack result = new ItemStack(Material.IRON_SWORD, 1);
+        ItemMeta meta = result.getItemMeta();
+        assert meta != null;
+        meta.addEnchant(Enchantment.DAMAGE_ARTHROPODS, 10000,true);
+        result.setItemMeta(meta);
+        return result;
+    }
+
     public static ItemStack getBow() {
         ItemStack result = new ItemStack(Material.BOW, 1);
         ItemMeta meta = result.getItemMeta();
@@ -48,7 +57,7 @@ public class ItemStacks {
     }
 
     public static ItemStack getPotion() {
-        ItemStack result = new ItemStack(Material.POTION, 1);
+        ItemStack result = new ItemStack(Material.POTION, 2);
         PotionMeta meta = (PotionMeta) result.getItemMeta();
         assert meta != null;
         meta.setDisplayName(ChatColor.WHITE + "透明化のポーション");

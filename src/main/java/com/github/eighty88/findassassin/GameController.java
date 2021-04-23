@@ -162,7 +162,8 @@ public class GameController {
                     player.getPlayer().getInventory().addItem(ItemStacks.getTorch());
                     break;
                 case Servant:
-                    player.getPlayer().getInventory().addItem(new ItemStack(Material.IRON_SWORD));
+                    player.getPlayer().getInventory().addItem(ItemStacks.getDummySword());
+                    break;
                 case Butler:
                     player.getPlayer().sendMessage("富豪は " + Objects.requireNonNull(millionaire).getPlayer().getName() + "です。");
                     break;
