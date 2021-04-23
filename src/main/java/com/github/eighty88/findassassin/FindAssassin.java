@@ -39,7 +39,7 @@ public final class FindAssassin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        gameController.end(RoleType.None);
+        if(gameController.isStarted) gameController.end(RoleType.None);
     }
 
     @Override
@@ -47,6 +47,7 @@ public final class FindAssassin extends JavaPlugin {
         if(command.getName().equals("findtheassassin") || command.getName().equals("fta")) {
             if(sender instanceof Player) {
                 settings.displayGUI((Player) sender);
+                return true;
             }
         }
         return false;

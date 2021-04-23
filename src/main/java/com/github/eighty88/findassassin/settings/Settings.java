@@ -2,6 +2,7 @@ package com.github.eighty88.findassassin.settings;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryAction;
@@ -37,7 +38,10 @@ public class Settings {
     }
 
     private void setInventory() {
-        int PlayerCount = Bukkit.getOnlinePlayers().size();
+        int PlayerCount = 0;
+        for(Player player:Bukkit.getOnlinePlayers()) {
+            if(player.getGameMode() != GameMode.SPECTATOR) PlayerCount++;
+        }
         Millionaire = 1;
         if(PlayerCount >= 2) {
             PlayerCount--;
