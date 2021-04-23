@@ -117,7 +117,7 @@ public class EventListener implements Listener {
 
     @EventHandler
     public void onPlayerPickUpItem(EntityPickupItemEvent e) {
-        if(e.getEntity() instanceof Player) {
+        if(e.getEntity() instanceof Player && e.getItem().getItemStack().getType() == Material.CAKE) {
             FTAPlayer player = FTAPlayer.getFTAPlayer((Player) e.getEntity());
             switch (player.getRole()) {
                 case Assassin:
@@ -135,6 +135,7 @@ public class EventListener implements Listener {
                     player.getPlayer().getInventory().addItem(new ItemStack(Material.ARROW, 4));
                     break;
             }
+            e.getItem().remove();
         }
     }
 }

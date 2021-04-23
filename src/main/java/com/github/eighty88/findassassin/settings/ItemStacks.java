@@ -13,10 +13,10 @@ public class ItemStacks {
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.RED + "暗殺者");
         itemMeta.setLore(Arrays.asList(
-                ChatColor.RESET + "役職: " + ChatColor.RED + "暗殺者", "",
-                "持ち物:",
-                "  即死剣 ×1",
-                "  透明化ポーション ×2", "",
+                ChatColor.WHITE + "役職: " + ChatColor.RED + "暗殺者", "",
+                ChatColor.WHITE + "持ち物:",
+                ChatColor.WHITE + "  即死剣 ×1",
+                ChatColor.WHITE + "  透明化ポーション ×2", "",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "クリックで一人追加",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "SHIFT + クリックで一人減らす"
         ));
@@ -36,9 +36,9 @@ public class ItemStacks {
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.DARK_GREEN + "使用人");
         itemMeta.setLore(Arrays.asList(
-                ChatColor.RESET + "役職: " + ChatColor.DARK_GREEN + "使用人", "",
-                "持ち物:",
-                "  鉄の剣 ×1"
+                ChatColor.WHITE + "役職: " + ChatColor.DARK_GREEN + "使用人", "",
+                ChatColor.WHITE + "持ち物:",
+                ChatColor.WHITE + "  鉄の剣 ×1"
         ));
         Stack.setItemMeta(itemMeta);
 
@@ -54,10 +54,10 @@ public class ItemStacks {
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.AQUA + "占い師");
         itemMeta.setLore(Arrays.asList(
-                ChatColor.RESET + "役職: " + ChatColor.AQUA + "執事", "",
-                "特筆事項: 執事は富豪が誰かを知っています", "",
-                "持ち物:",
-                "  即死剣 ×1", "",
+                ChatColor.WHITE + "役職: " + ChatColor.AQUA + "執事", "",
+                ChatColor.WHITE + "特筆事項: 執事は富豪が誰かを知っています", "",
+                ChatColor.WHITE + "持ち物:",
+                ChatColor.WHITE + "  即死剣 ×1", "",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "クリックで一人追加",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "SHIFT + クリックで一人減らす"
         ));
@@ -75,10 +75,10 @@ public class ItemStacks {
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.YELLOW + "メイド");
         itemMeta.setLore(Arrays.asList(
-                ChatColor.RESET + "役職: " + ChatColor.YELLOW + "メイド", "",
-                "持ち物:",
-                "  即死弓 ×1",
-                "  矢 ×2", "",
+                ChatColor.WHITE + "役職: " + ChatColor.YELLOW + "メイド", "",
+                ChatColor.WHITE + "持ち物:",
+                ChatColor.WHITE + "  即死弓 ×1",
+                ChatColor.WHITE + "  矢 ×2", "",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "クリックで一人追加",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "SHIFT + クリックで一人減らす"
         ));
@@ -92,12 +92,12 @@ public class ItemStacks {
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.GREEN + "富豪");
         itemMeta.setLore(Arrays.asList(
-                ChatColor.RESET + "役職: " + ChatColor.GREEN + "富豪", "",
-                "持ち物:",
-                "  即死剣 ×1",
-                "  ケーキ ×3",
-                "  不死のトーテム ×3",
-                "  メイド召喚杖 ×1"
+                ChatColor.WHITE + "役職: " + ChatColor.GREEN + "富豪", "",
+                ChatColor.WHITE + "持ち物:",
+                ChatColor.WHITE + "  即死剣 ×1",
+                ChatColor.WHITE + "  ケーキ ×3",
+                ChatColor.WHITE + "  不死のトーテム ×3",
+                ChatColor.WHITE + "  メイド召喚杖 ×1"
         ));
         Stack.setItemMeta(itemMeta);
 
@@ -113,10 +113,10 @@ public class ItemStacks {
         ItemMeta itemMeta = Stack.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.GOLD + "偽メイド");
         itemMeta.setLore(Arrays.asList(
-                ChatColor.RESET + "役職: " + ChatColor.GOLD + "偽メイド", "",
-                "持ち物:",
-                "  即死弓 ×1",
-                "  矢 ×2", "",
+                ChatColor.WHITE + "役職: " + ChatColor.GOLD + "偽メイド", "",
+                ChatColor.WHITE + "持ち物:",
+                ChatColor.WHITE + "  即死弓 ×1",
+                ChatColor.WHITE + "  矢 ×2", "",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "クリックで一人追加",
                 ChatColor.RESET.toString() + ChatColor.YELLOW + "SHIFT + クリックで一人減らす"
         ));

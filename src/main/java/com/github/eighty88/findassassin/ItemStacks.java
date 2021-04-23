@@ -19,7 +19,7 @@ public class ItemStacks {
         assert meta != null;
         ((Damageable) meta).setDamage(251);
         meta.addEnchant(Enchantment.DAMAGE_ALL, 10000,true);
-        meta.setDisplayName(ChatColor.RESET + "一撃剣");
+        meta.setDisplayName(ChatColor.WHITE + "一撃剣");
         meta.setLore(Collections.singletonList(ChatColor.AQUA + "プレイヤーを一撃で倒せる。"));
         result.setItemMeta(meta);
         return result;
@@ -30,7 +30,7 @@ public class ItemStacks {
         ItemMeta meta = result.getItemMeta();
         assert meta != null;
         meta.addEnchant(Enchantment.ARROW_DAMAGE, 10000,true);
-        meta.setDisplayName(ChatColor.RESET + "一撃弓");
+        meta.setDisplayName(ChatColor.WHITE + "一撃弓");
         meta.setUnbreakable(true);
         meta.setLore(Collections.singletonList(ChatColor.AQUA + "プレイヤーを一撃で倒せる。"));
         result.setItemMeta(meta);
@@ -41,7 +41,7 @@ public class ItemStacks {
         ItemStack result = new ItemStack(Material.REDSTONE_TORCH, 1);
         ItemMeta meta = result.getItemMeta();
         assert meta != null;
-        meta.setDisplayName(ChatColor.RESET + "メイド召喚杖");
+        meta.setDisplayName(ChatColor.WHITE + "メイド召喚杖");
         meta.setLore(Collections.singletonList(ChatColor.AQUA + "メイドを召喚できる。"));
         result.setItemMeta(meta);
         return result;
@@ -51,7 +51,7 @@ public class ItemStacks {
         ItemStack result = new ItemStack(Material.POTION, 1);
         PotionMeta meta = (PotionMeta) result.getItemMeta();
         assert meta != null;
-        meta.setDisplayName(ChatColor.RESET + "透明化のポーション");
+        meta.setDisplayName(ChatColor.WHITE + "透明化のポーション");
         meta.setLore(Collections.singletonList(ChatColor.AQUA + "透明化できる。"));
         meta.addCustomEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 600, 1, true, true, true), true);
         result.setItemMeta(meta);

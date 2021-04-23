@@ -33,6 +33,8 @@ public class GameController {
     }
 
     public void end(RoleType winner) {
+        isStarted = false;
+
         if(winner != RoleType.None)
             for(Player player: Bukkit.getOnlinePlayers()) {
                 player.sendTitle(winner.toString() + ChatColor.WHITE + "の勝利", "", 0, 50, 50);
