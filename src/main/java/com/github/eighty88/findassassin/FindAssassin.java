@@ -3,6 +3,7 @@ package com.github.eighty88.findassassin;
 import com.github.eighty88.findassassin.player.FTAPlayer;
 import com.github.eighty88.findassassin.player.RoleType;
 import com.github.eighty88.findassassin.settings.Settings;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -30,6 +31,8 @@ public final class FindAssassin extends JavaPlugin {
 
         settings = new Settings();
         gameController = new GameController(this);
+
+        Bukkit.getPluginManager().registerEvents(new EventListener(this), this);
 
         FTAPlayer.RefreshPlayers();
     }
