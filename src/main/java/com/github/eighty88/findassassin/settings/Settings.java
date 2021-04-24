@@ -43,7 +43,7 @@ public class Settings {
             if(player.getGameMode() != GameMode.SPECTATOR) PlayerCount++;
         }
         Millionaire = 1;
-        if(PlayerCount >= 2) {
+        if(PlayerCount >= 1) {
             PlayerCount--;
             Assassin = (int) Math.ceil(PlayerCount / 5.0);
             PlayerCount = PlayerCount - Assassin;

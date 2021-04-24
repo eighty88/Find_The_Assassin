@@ -10,7 +10,6 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -108,20 +107,15 @@ public class EventListener implements Listener {
                 if (ftaPlayer.getRole() == RoleType.Maid || ftaPlayer.getRole() == RoleType.FakeMaid)
                     ftaPlayer.getPlayer().teleport(e.getPlayer().getLocation());
             }
-        }
-    }
-
-    @EventHandler
-    public void onPlayerPickUpItem(EntityPickupItemEvent e) {
-        if(e.getEntity() instanceof Player && e.getItem().getItemStack().getType() == Material.CAKE) {
-            FTAPlayer player = FTAPlayer.getFTAPlayer((Player) e.getEntity());
+        } else if(e.getItemDrop().getItemStack().getType() == Material.CAKE) {
+            FTAPlayer player = FTAPlayer.getFTAPlayer(e.getPlayer());
             switch (player.getRole()) {
                 case Assassin:
                     player.addItem(ItemStacks.getSword());
                     break;
                 case Millionaire:
                 case Butler:
-                    break;
+                    return;
                 case Servant:
                     player.addItem(new ItemStack(Material.TOTEM_OF_UNDYING));
                     break;
@@ -131,7 +125,7 @@ public class EventListener implements Listener {
                     player.addItem(new ItemStack(Material.ARROW, 4));
                     break;
             }
-            e.getItem().remove();
+            e.getItemDrop().remove();
         }
     }
 }

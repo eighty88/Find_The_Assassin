@@ -55,7 +55,7 @@ public class ItemStacks {
             Stack.setAmount(1);
         }
         ItemMeta itemMeta = Stack.getItemMeta();
-        Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.AQUA + "占い師");
+        Objects.requireNonNull(itemMeta).setDisplayName(ChatColor.RESET.toString() + ChatColor.AQUA + "執事");
         itemMeta.setLore(Arrays.asList(
                 ChatColor.WHITE + "役職: " + ChatColor.AQUA + "執事", "",
                 ChatColor.WHITE + "特筆事項: 執事は富豪が誰かを知っています", "",

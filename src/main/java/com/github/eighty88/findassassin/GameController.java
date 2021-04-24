@@ -35,6 +35,7 @@ public class GameController {
 
         if(winner != RoleType.None)
             for(Player player: Bukkit.getOnlinePlayers()) {
+                player.getInventory().clear();
                 player.sendTitle(winner.toString() + ChatColor.WHITE + "の勝利", "", 0, 50, 50);
             }
 
@@ -92,14 +93,14 @@ public class GameController {
     public void decideEnd() {
         int assassin = 0;
         for(FTAPlayer player: FTAPlayer.getFTAPlayers()) {
-            if(!player.isDead())
-                if(player.getRole() == RoleType.Assassin)
+            if (!player.isDead()) {
+                if (player.getRole() == RoleType.Assassin) {
                     assassin++;
-            else
-                if(player.getRole() == RoleType.Millionaire) {
-                    end(RoleType.Assassin);
-                    return;
                 }
+            } else if (player.getRole() == RoleType.Millionaire) {
+                end(RoleType.Assassin);
+                return;
+            }
         }
         if(assassin == 0)
             end(RoleType.Millionaire);
@@ -154,14 +155,16 @@ public class GameController {
                 case Millionaire:
                     player.addItem(ItemStacks.getSword());
                     player.addItem(new ItemStack(Material.CAKE, 3));
-                    player.addItem(new ItemStack(Material.TOTEM_OF_UNDYING, 3));
+                    player.addItem(new ItemStack(Material.TOTEM_OF_UNDYING));
+                    player.addItem(new ItemStack(Material.TOTEM_OF_UNDYING));
+                    player.addItem(new ItemStack(Material.TOTEM_OF_UNDYING));
                     player.addItem(ItemStacks.getTorch());
                     break;
-                case Servant:
-                    player.addItem(ItemStacks.getDummySword());
-                    break;
+
                 case Butler:
                     player.sendMessage("富豪は " + Objects.requireNonNull(millionaire).getPlayer().getName() + "です。");
+                case Servant:
+                    player.addItem(ItemStacks.getDummySword());
                     break;
                 case FakeMaid:
                 case Maid:
