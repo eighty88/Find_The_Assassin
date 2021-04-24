@@ -2,6 +2,7 @@ package com.github.eighty88.findassassin.player;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,5 +71,13 @@ public class FTAPlayer {
 
     public boolean isDead() {
         return isDead;
+    }
+
+    public void addItem(ItemStack... stacks) {
+        player.getInventory().addItem(stacks);
+    }
+
+    public void sendMessage(String str) {
+        player.sendMessage(str);
     }
 }
