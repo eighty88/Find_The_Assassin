@@ -94,9 +94,8 @@ public class EventListener implements Listener {
         if (gameController.isStarted) {
             if (FTAPlayer.getFTAPlayer(e.getPlayer()).getRole() == RoleType.None)
                 FTAPlayer.unRegisterPlayer(e.getPlayer());
-        } else {
+        } else
             FTAPlayer.unRegisterPlayer(e.getPlayer());
-        }
     }
 
     @EventHandler
