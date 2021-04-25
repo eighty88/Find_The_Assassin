@@ -29,8 +29,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: Release-${{ github.run_number }}
-        release_name: Release ${{ github.run_number }}
+        tag_name: Release-${{ github.event.head_commit.message }}
+        release_name: Release ${{ github.event.head_commit.message }}
         draft: false
         prerelease: false
         
@@ -42,7 +42,7 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./target/FindTheAssassin-1.0.jar
-        asset_name: FindTheAssassin-1.0-R${{ github.run_number }}.jar
+        asset_name: FindTheAssassin-${{ github.event.head_commit.message }}.jar
         asset_content_type: application/zip
 
           
