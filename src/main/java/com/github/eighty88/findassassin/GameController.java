@@ -145,6 +145,7 @@ public class GameController {
         for(FTAPlayer player:FTAPlayer.getFTAPlayers()) {
             player.getPlayer().getInventory().clear();
             player.sendMessage("あなたは" + player.getRole().toString() + ChatColor.WHITE + "です。");
+            player.addItem(new ItemStack(Material.WOODEN_SWORD));
             player.getPlayer().sendTitle("あなたの役職: " + player.getRole().toString(), "", 0, 50, 50);
             switch (player.getRole()) {
                 case Assassin:

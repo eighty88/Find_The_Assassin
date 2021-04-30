@@ -41,7 +41,7 @@ public class EventListener implements Listener {
                         settings.Butler = settings.Set(e.getAction(), settings.Butler, player);
                         break;
                     case 13:
-                        if (settings.Assassin > 1)
+                        if (settings.Assassin > 0)
                             settings.Assassin = settings.Set(e.getAction(), settings.Assassin, player);
                         break;
                     case 14:
